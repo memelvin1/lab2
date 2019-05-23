@@ -1,25 +1,33 @@
 # lab2
 Unit Testing
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AwesomeCalculator;
-using NUnit.Framework;
+ [Test]
+        public void GetDivision_Input8point4and2point0_Returns4point2()
+        {
+            double number1 = 8.4;
+            double number2 = 2.0;
+            double expectedResult = number1 / number2;
+            Calc testCalc = new Calc(number1, number2);
+            double actualResult = testCalc.GetDivision();
+            Assert.AreEqual(expectedResult, actualResult);
+        }
 
-namespace ClassLibrary1
-{
-    [TestFixture]
-    public class Calctest
-    {
         [Test]
-        public void GetMultiplication_Input4point4and2point0_Returns8point8()
+        public void GetDivision_Input4point4and1point1_Returns4point0()
         {
             double number1 = 4.4;
-            double number2 = 2.0;
-            double expectedResult = number1 * number2;
+            double number2 = 1.1;
+            double expectedResult = number1 / number2;
             Calc testCalc = new Calc(number1, number2);
-            double actualResult = testCalc.GetMultiplication();
+            double actualResult = testCalc.GetDivision();
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+        [Test]
+        public void GetDivision_Input6point0and2point0_Returns3point0()
+        {
+            double number1 = 6.0;
+            double number2 = 2.0;
+            double expectedResult = number1 / number2;
+            Calc testCalc = new Calc(number1, number2);
+            double actualResult = testCalc.GetDivision();
             Assert.AreEqual(expectedResult, actualResult);
         }
